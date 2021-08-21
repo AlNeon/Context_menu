@@ -38,6 +38,7 @@ export class ContextMenu extends Menu {
     soundTrigger.addEventListener('click', () => {
       soundModule.trigger();
       this.close();
+    })
 
     const timerModule = new TimerModule ('timer', 'таймер');
     this.el.insertAdjacentHTML('beforeend', timerModule.toHTML());
