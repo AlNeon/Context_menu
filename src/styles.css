@@ -24,7 +24,7 @@ body {
   border-radius: 5px;
   display: none;
   list-style: none;
-  box-shadow: 4px 4px 20px 0px rgba(0, 0, 0, 0.6);
+  box-shadow: 4px 4px 20px 0px rgba(0, 0, 0, 0.55);
 }
 
 .menu.open {
