@@ -20,10 +20,11 @@ body {
   position: fixed;
   z-index: 1000;
   width: 150px;
-  background: #1b1a1a;
+  background: #797492;
   border-radius: 5px;
   display: none;
   list-style: none;
+  box-shadow: 4px 4px 20px 0px rgba(0, 0, 0, 0.6);
 }
 
 .menu.open {
@@ -31,14 +32,14 @@ body {
 }
 
 .menu .menu-item {
-  background-image: linear-gradient(to right, #1f1c2c 0%, #797492 51%, #1f1c2c 100%);
+  background: linear-gradient(to right, #1f1c2c 0%, #797492 51%, #1f1c2c 100%);
   padding: 8px 10px;
   font-size: 1rem;
   color: #eee;
   cursor: pointer;
   transition: 0.5s;
   background-size: 200% auto;
-  border-radius: inherit;
+  text-align: center;
 }
 
 .menu .menu-item:hover {
