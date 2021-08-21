@@ -1,6 +1,8 @@
 import { Menu } from './core/menu'
 import { BackgroundModule } from './modules/background.module'
 import { SoundModule } from "./modules/sound.module";
+import { TimerModule } from './modules/timer.module'
+
 
 export class ContextMenu extends Menu {
   constructor(selector) {
@@ -27,6 +29,7 @@ export class ContextMenu extends Menu {
     const bgTrigger = document.querySelector("[data-type='background']")
     bgTrigger.addEventListener('click', () => {
       backgroundModule.trigger()
+      this.close();
     })
 
     const soundModule = new SoundModule('sound', 'Звук')
@@ -34,6 +37,14 @@ export class ContextMenu extends Menu {
     const soundTrigger = document.querySelector("[data-type='sound']")
     soundTrigger.addEventListener('click', () => {
       soundModule.trigger();
+      this.close();
+
+    const timerModule = new TimerModule ('timer', 'таймер');
+    this.el.insertAdjacentHTML('beforeend', timerModule.toHTML());
+    const timerTrigger = document.querySelector("[data-type='timer']");
+    timerTrigger.addEventListener('click', () => {
+      timerModule.trigger();
+      this.close();
     })
   }
 }
