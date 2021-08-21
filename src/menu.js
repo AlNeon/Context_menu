@@ -1,4 +1,6 @@
 import { Menu } from './core/menu'
+import { BackgroundModule } from './modules/background.module'
+
 export class ContextMenu extends Menu {
   constructor(selector) {
     super(selector)
@@ -18,5 +20,12 @@ export class ContextMenu extends Menu {
   close() {
     this.el.classList.remove('open')
   }
-  add() {}
+  add() {
+    const backgroundModule = new BackgroundModule('background', 'поменять цвет')
+    this.el.insertAdjacentHTML('afterbegin', backgroundModule.toHTML())
+    const bgTrigger = document.querySelector("[data-type='background']")
+    bgTrigger.addEventListener('click', () => {
+      backgroundModule.trigger()
+    })
+  }
 }
