@@ -12,16 +12,24 @@ body {
   height: 100vh;
   width: 100%;
   padding: 2rem;
+  background-color: #ff3cac;
+  background-image: linear-gradient(
+    225deg,
+    #ff3cac 0%,
+    #784ba0 50%,
+    #2b86c5 100%
+  );
 }
 
 .menu {
   position: fixed;
   z-index: 1000;
   width: 150px;
-  background: #1b1a1a;
+  background: #797492;
   border-radius: 5px;
   display: none;
   list-style: none;
+  box-shadow: 4px 4px 20px 0px rgba(0, 0, 0, 0.55);
 }
 
 .menu.open {
@@ -29,16 +37,19 @@ body {
 }
 
 .menu .menu-item {
+  background: linear-gradient(to right, #1f1c2c 0%, #797492 51%, #1f1c2c 100%);
   padding: 8px 10px;
   font-size: 1rem;
   color: #eee;
   cursor: pointer;
-  transition: background-color 0.2s ease-in;
-  border-radius: inherit;
+  transition: 0.5s;
+  background-size: 200% auto;
+  text-align: center;
 }
 
 .menu .menu-item:hover {
-  background: #343434;
+  background-position: right center;
+  color: #fff;
 }
 
 #time {
