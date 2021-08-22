@@ -44,8 +44,8 @@ export class ContextMenu extends Menu {
     this.el.insertAdjacentHTML('beforeend', timerModule.toHTML());
     const timerTrigger = document.querySelector("[data-type='timer']");
     timerTrigger.addEventListener('click', () => {
-      timerModule.trigger();
       this.close();
+      timerModule.trigger();
     })
   }
 }
