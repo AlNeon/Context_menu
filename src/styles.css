@@ -82,7 +82,8 @@ body {
 
 #choice-picker_container {
   width: 500px;
-  margin: 2rem auto;
+  padding: 2rem;
+  margin: 0 auto;
   overflow: hidden;
 }
 
@@ -149,7 +150,7 @@ textarea {
 
 #blur_container {
   font-family: 'Ubuntu', sans-serif;
-  display: flex;
+  display: none;
   align-items: center;
   justify-content: center;
   height: 100vh;
