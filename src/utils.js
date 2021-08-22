@@ -1,7 +1,15 @@
 export function random(min, max) {
-  return Math.round(min - 0.5 + Math.random() * (max - min + 1))
+  return Math.floor(Math.random() * (max - min + 1)) + min;
 }
 
-const  c = ['blue','red']
+export function randomColorRGB() {
+  return `rgb(${random(0, 255)},${random(0, 255)},${random(0, 255)})`;
+}
 
-console.log(random(0, c.length))
+export function makeCanvas(width, height) {
+  const canvas = document.createElement("canvas");
+  canvas.width = width;
+  canvas.height = height;
+  canvas.className = "canvas";
+  return canvas;
+}
