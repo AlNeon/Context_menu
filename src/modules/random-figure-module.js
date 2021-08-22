@@ -1,5 +1,5 @@
 import { Module } from "../core/module";
-import { random, makeCanvas, randomColorRGB } from "../utils";
+import { random, randomColorRGB } from "../utils";
 import { FIGURE } from "../core/constants/figure";
 
 export class RandomFigureModule extends Module {
@@ -11,9 +11,16 @@ export class RandomFigureModule extends Module {
   get arrayOfFigure() {
     return this.#arrayOfFigure;
   }
+  makeCanvas(width, height) {
+    const canvas = document.createElement("canvas");
+    canvas.width = width;
+    canvas.height = height;
+    canvas.className = "canvas";
+    return canvas;
+  }
   trigger() {
     const { height, width } = window.screen;
-    const canvas = makeCanvas(width, height * 0.8);
+    const canvas = this.makeCanvas(width, height * 0.8);
     const figure = this.arrayOfFigure[random(0, this.arrayOfFigure.length - 1)];
 
     const context = canvas.getContext("2d");
