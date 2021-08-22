@@ -6,7 +6,9 @@ export class BluryLoading extends Module {
     super(type, text)
   }
   trigger() {
-    document.querySelector('#blur_container').innerHTML = `
+    const blurContainer = document.querySelector('#blur_container')
+    blurContainer.style.display = 'flex'
+    blurContainer.innerHTML = `
     <section class="bg"></section>
     <div class="loading-text">0%</div>
     `
@@ -27,11 +29,11 @@ export class BluryLoading extends Module {
       loadText.style.opacity = scale(load, 0, 100, 1, 0)
 
       bg.style.filter = `blur(${scale(load, 0, 100, 30, 0)}px)`
-
-      setTimeout(() => {
-        document.querySelector('.bg').remove()
-        document.querySelector('.loading-text').remove()
-      }, 6000)
     }
+    setTimeout(() => {
+      document.querySelector('.bg').remove()
+      document.querySelector('.loading-text').remove()
+      blurContainer.style.display = 'none'
+    }, 4500)
   }
 }
