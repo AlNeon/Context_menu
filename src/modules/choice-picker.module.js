@@ -7,11 +7,10 @@ export class ChoicePickerModule extends Module {
   }
 
   trigger() {
-    document.querySelector('#choice-picker-container').innerHTML = `
+    document.querySelector('#choice-picker_container').innerHTML = `
     <div class='choice-picker'>
         <h3 class='picker-condition'>
-        Введите все варианты, разделенные запятой (','). <br />
-        Press enter when you're done
+        Введите все варианты через пробел и нажмите Enter
       </h3>
       <textarea placeholder="Введите варианты здесь..." id="textarea" ></textarea>
 
@@ -38,7 +37,7 @@ export class ChoicePickerModule extends Module {
 
     function createTags(input) {
       const tags = input
-        .split(',')
+        .split(' ')
         .filter((tag) => tag.trim() !== '')
         .map((tag) => tag.trim())
 
