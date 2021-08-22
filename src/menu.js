@@ -3,6 +3,7 @@ import { BackgroundModule } from "./modules/background.module";
 import { SoundModule } from "./modules/sound.module";
 import { TimerModule } from "./modules/timer.module";
 import { RandomFigureModule } from "./modules/random-figure-module";
+import { ClicksModule } from "./modules/clicks.module";
 
 export class ContextMenu extends Menu {
   constructor(selector) {
@@ -46,13 +47,21 @@ export class ContextMenu extends Menu {
     timerTrigger.addEventListener('click', () => {
       this.close();
       timerModule.trigger();
-    })
+    });
 
     const randomFigureModule = new RandomFigureModule("figure", "Случайная фигура");
     this.el.insertAdjacentHTML("beforeend", randomFigureModule.toHTML());
     const figureTrigger = document.querySelector("[data-type='figure']");
     figureTrigger.addEventListener("click", () => {
       randomFigureModule.trigger();
+      this.close();
+    });
+
+    const clicksModule = new ClicksModule("clicks", "аналитика кликов");
+    this.el.insertAdjacentHTML("beforeend", clicksModule.toHTML());
+    const clicksTrigger = document.querySelector("[data-type='clicks']");
+    clicksTrigger.addEventListener("click", () => {
+      clicksModule.trigger();
       this.close();
     });
   }

@@ -2,13 +2,17 @@ import { Module } from "../core/module";
 
 export class TimerModule extends Module {
   constructor(type, text) {
-    super (type, text)
+    super (type = 'timer', text = "таймер")
+    this.hourTime = 0;
+    this.minuteTime = 0;
+    this.secondTime = 0;
+    this.limitTime = 0;
   }
 
   trigger() {
     document.getElementById('time').innerHTML = `
     <div id="time">
-      <div id="timer">
+      <div id="timerr">
         <div class="timer-count">
           <span class="hours timer-time"></span>
           <span class="timer-text" >Часы</span>
@@ -55,7 +59,7 @@ export class TimerModule extends Module {
 
         if (time.total <= 0) {
           clearInterval(timeInterval);
-          document.getElementById('timer').remove();
+          document.getElementById('timerr').remove();
         }
       }
 
@@ -63,13 +67,14 @@ export class TimerModule extends Module {
       const timeInterval = setInterval(updateClock, 1000);
     }
 
-    const hourTime = Number(prompt('Внесети часы'));
-    const minuteTime = Number(prompt('Внесети минуты'));
-    const secondTime = Number(prompt('Внесети секунды'));
+    this.hourTime = Number(prompt('Внесети часы'));
+    this.minuteTime = Number(prompt('Внесети минуты'));
+    this.secondTime = Number(prompt('Внесети секунды'));
 
-    const limitTime = new Date(Date.parse(new Date()) + `${hourTime}` * 60 * 60 * 1000 + `${minuteTime}` * 60 * 1000 + `${secondTime}` * 1000);
+    this.limitTime = new Date(Date.parse(new Date()) + `${this.hourTime}` * 60 * 60 * 1000 + `${this.minuteTime}` * 60 * 1000 + `${this.secondTime}` * 1000);
+    console.log(this.limitTime);
     
-    initialClock('timer', limitTime);
+    initialClock('timerr', this.limitTime);
 
     
   }
