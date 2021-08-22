@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@100;400&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@100;400&display=swap");
 
 * {
   margin: 0;
@@ -8,11 +8,16 @@
 
 body {
   font-size: 14px;
-  font-family: 'Roboto', sans-serif;
+  font-family: "Roboto", sans-serif;
   height: 100vh;
   width: 100%;
   background-color: #ff3cac;
-  background-image: linear-gradient(225deg, #ff3cac 0%, #784ba0 50%, #2b86c5 100%);
+  background-image: linear-gradient(
+    225deg,
+    #ff3cac 0%,
+    #784ba0 50%,
+    #2b86c5 100%
+  );
   overflow: hidden;
 }
 
@@ -51,7 +56,7 @@ body {
   text-align: right;
 }
 
-#timerr {
+#timerClick {
   font-family: sans-serif;
   color: #fff;
   display: inline-block;
@@ -82,8 +87,7 @@ body {
 
 #choice-picker_container {
   width: 500px;
-  padding: 2rem;
-  margin: 0 auto;
+  margin: 2rem auto;
   overflow: hidden;
 }
 
@@ -154,8 +158,8 @@ textarea {
 }
 
 #blur_container {
-  font-family: 'Ubuntu', sans-serif;
-  display: none;
+  font-family: "Ubuntu", sans-serif;
+  display: flex;
   align-items: center;
   justify-content: center;
   height: 100vh;
@@ -164,7 +168,7 @@ textarea {
 }
 
 .bg {
-  background: url('https://fs.getcourse.ru/fileservice/file/download/a/177331/sc/337/h/3109068ef6fb6e6a5a61adbccd1b988a.jpg')
+  background: url("https://fs.getcourse.ru/fileservice/file/download/a/177331/sc/337/h/3109068ef6fb6e6a5a61adbccd1b988a.jpg")
     no-repeat center center/cover;
   position: absolute;
   top: -30px;
