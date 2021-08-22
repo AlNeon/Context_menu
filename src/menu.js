@@ -27,7 +27,7 @@ export class ContextMenu extends Menu {
     this.el.classList.remove('open')
   }
   add() {
-    const backgroundModule = new BackgroundModule('background', 'Поменять цвет')
+    const backgroundModule = new BackgroundModule('background', 'Смена фона')
     this.el.insertAdjacentHTML('afterbegin', backgroundModule.toHTML())
     const bgTrigger = document.querySelector("[data-type='background']")
     bgTrigger.addEventListener('click', () => {
@@ -35,7 +35,7 @@ export class ContextMenu extends Menu {
       this.close()
     })
 
-    const soundModule = new SoundModule('sound', 'Звук')
+    const soundModule = new SoundModule('sound', 'Проиграть звук')
     this.el.insertAdjacentHTML('beforeend', soundModule.toHTML())
     const soundTrigger = document.querySelector("[data-type='sound']")
     soundTrigger.addEventListener('click', () => {
@@ -43,7 +43,7 @@ export class ContextMenu extends Menu {
       this.close()
     })
 
-    const timerModule = new TimerModule('timer', 'Таймер')
+    const timerModule = new TimerModule('timer', 'Таймер обратного отсчета')
     this.el.insertAdjacentHTML('beforeend', timerModule.toHTML())
     const timerTrigger = document.querySelector("[data-type='timer']")
     timerTrigger.addEventListener('click', () => {
@@ -59,7 +59,7 @@ export class ContextMenu extends Menu {
       this.close()
     })
 
-    const clicksModule = new ClicksModule('clicks', 'аналитика кликов')
+    const clicksModule = new ClicksModule('clicks', 'Аналитика кликов')
     this.el.insertAdjacentHTML('beforeend', clicksModule.toHTML())
     const clicksTrigger = document.querySelector("[data-type='clicks']")
     clicksTrigger.addEventListener('click', () => {
