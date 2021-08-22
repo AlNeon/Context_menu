@@ -1,7 +1,8 @@
 import { Menu } from './core/menu'
 import { BackgroundModule } from './modules/background.module'
 import { SoundModule } from "./modules/sound.module";
-import { TimerModule } from './modules/timer.module'
+import { TimerModule } from './modules/timer.module';
+import { ClicksModule } from './modules/clicks.module';
 
 
 export class ContextMenu extends Menu {
@@ -44,8 +45,16 @@ export class ContextMenu extends Menu {
     this.el.insertAdjacentHTML('beforeend', timerModule.toHTML());
     const timerTrigger = document.querySelector("[data-type='timer']");
     timerTrigger.addEventListener('click', () => {
-      timerModule.trigger();
       this.close();
+      timerModule.trigger();
+    })
+
+    const clicksModule = new ClicksModule ('clicks', 'аналитика кликов');
+    this.el.insertAdjacentHTML('beforeend', clicksModule.toHTML());
+    const clicksTrigger = document.querySelector("[data-type='clicks']");
+    clicksTrigger.addEventListener('click', () => {
+      this.close();
+      clicksModule.trigger();
     })
   }
 }
