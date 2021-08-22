@@ -6,7 +6,7 @@ export class TimerModule extends Module {
     this.hourTime = 0;
     this.minuteTime = 0;
     this.secondTime = 0;
-    this.limitTime = 0;
+    this.limitTime = 0; 
   }
 
   trigger() {
