@@ -1,4 +1,5 @@
 import { Module } from "../core/module";
+import { random } from "@/utils";
 
 export class SoundModule extends Module {
     constructor(type, text) {
@@ -6,7 +7,7 @@ export class SoundModule extends Module {
     }
 
     trigger() {
-        const randomAudio = Math.floor(Math.random() * 20 + 1);
+        const randomAudio = random(1, 20);
 
         let audio = new Audio();
         audio.src = `../../assets/media/s${randomAudio}.wav`;
