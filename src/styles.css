@@ -83,3 +83,30 @@ body {
 .canvas {
   position: absolute;
 }
+
+.box {
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  width: 30%;
+  height: auto;
+  margin: 15px;
+}
+
+.block {
+  text-align: center;
+  margin: 15px;
+  padding: 5px;
+  border: 1px solid #fff;
+  border-radius: 10px;
+}
+
+.block_img {
+  width: 100px;
+  height: auto;
+  border-radius: 50%;
+}
+
+.block_title {
+  margin: 5px 0;
+}
