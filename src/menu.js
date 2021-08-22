@@ -17,10 +17,23 @@ export class ContextMenu extends Menu {
     })
   }
   open(e) {
-    this.el.classList.add('open')
+    const contextMenu = this.el
     const { clientX: mouseX, clientY: mouseY } = e
-    this.el.style.top = `${mouseY}px`
-    this.el.style.left = `${mouseX}px`
+    const { offsetWidth, offsetHeight } = contextMenu
+    const { innerWidth, innerHeight } = window
+    let x = 0, y = 0
+
+    if (mouseY >= innerHeight - offsetHeight) {
+      y = '-100%'
+    }
+    if (mouseX >= innerWidth - offsetWidth) {
+      x = '-100%'
+    }
+
+    contextMenu.classList.add('open')
+    contextMenu.style.top = `${mouseY}px`
+    contextMenu.style.left = `${mouseX}px`
+    contextMenu.style.transform = `translate(${x}, ${y})`
   }
 
   close() {
