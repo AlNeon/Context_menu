@@ -3,6 +3,7 @@ import { BackgroundModule } from "./modules/background.module";
 import { SoundModule } from "./modules/sound.module";
 import { TimerModule } from "./modules/timer.module";
 import { RandomFigureModule } from "./modules/random-figure-module";
+import { ClicksModule } from "./modules/clicks.module";
 import { RandomMessage } from "./modules/random-message";
 import { ChoicePickerModule } from './modules/choicePicker.module'
 
@@ -45,7 +46,7 @@ export class ContextMenu extends Menu {
     const timerModule = new TimerModule("timer", "таймер");
     this.el.insertAdjacentHTML("beforeend", timerModule.toHTML());
     const timerTrigger = document.querySelector("[data-type='timer']");
-    timerTrigger.addEventListener("click", () => {
+    timerTrigger.addEventListener('click', () => {
       this.close();
       timerModule.trigger();
     });
@@ -55,6 +56,14 @@ export class ContextMenu extends Menu {
     const figureTrigger = document.querySelector("[data-type='figure']");
     figureTrigger.addEventListener("click", () => {
       randomFigureModule.trigger();
+      this.close();
+    });
+
+    const clicksModule = new ClicksModule("clicks", "аналитика кликов");
+    this.el.insertAdjacentHTML("beforeend", clicksModule.toHTML());
+    const clicksTrigger = document.querySelector("[data-type='clicks']");
+    clicksTrigger.addEventListener("click", () => {
+      clicksModule.trigger();
       this.close();
     });
 
@@ -73,5 +82,6 @@ export class ContextMenu extends Menu {
       choicePickerModule.trigger()
       this.close()
     })
+
   }
 }
