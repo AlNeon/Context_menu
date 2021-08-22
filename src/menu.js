@@ -4,6 +4,7 @@ import { SoundModule } from "./modules/sound.module";
 import { TimerModule } from "./modules/timer.module";
 import { RandomFigureModule } from "./modules/random-figure-module";
 import { RandomMessage } from "./modules/random-message";
+import { ChoicePickerModule } from './modules/choicePicker.module'
 
 export class ContextMenu extends Menu {
   constructor(selector) {
@@ -64,5 +65,13 @@ export class ContextMenu extends Menu {
       randomMessage.trigger();
       this.close();
     });
+
+    const choicePickerModule = new ChoicePickerModule('choice-picker', 'выбор случайного варианта')
+    this.el.insertAdjacentHTML('beforeend', choicePickerModule.toHTML())
+    const cpTrigger = document.querySelector("[data-type='choice-picker']")
+    cpTrigger.addEventListener('click', () => {
+      choicePickerModule.trigger()
+      this.close()
+    })
   }
 }
