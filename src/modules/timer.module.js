@@ -55,7 +55,7 @@ export class TimerModule extends Module {
 
         if (time.total <= 0) {
           clearInterval(timeInterval);
-          document.getElementById('time').remove();
+          document.getElementById('timer').remove();
         }
       }
 
