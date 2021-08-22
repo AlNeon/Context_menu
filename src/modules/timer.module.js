@@ -2,7 +2,7 @@ import { Module } from "../core/module";
 
 export class TimerModule extends Module {
   constructor(type, text) {
-    super (type = 'timer', text = "таймер")
+    super (type = 'timer', text = "Таймер обратного отсчета")
     this.hourTime = 0;
     this.minuteTime = 0;
     this.secondTime = 0;
@@ -12,7 +12,7 @@ export class TimerModule extends Module {
   trigger() {
     document.getElementById('time').innerHTML = `
     <div id="time">
-      <div id="timerr">
+      <div id="timerClick">
         <div class="timer-count">
           <span class="hours timer-time"></span>
           <span class="timer-text" >Часы</span>
@@ -57,9 +57,10 @@ export class TimerModule extends Module {
         minutesSpan.innerHTML = ('0' + time.minutes).slice(-2);
         hoursSpan.innerHTML = ('0' + time.hours).slice(-2);
 
-        if (time.total <= 0) {
+        if (time.total < 0) {
           clearInterval(timeInterval);
-          document.getElementById('timerr').remove();
+          document.getElementById('timerClick').remove();
+          alert('Ваше время истекло! Надеемся вы все успели)');
         }
       }
 
@@ -74,7 +75,7 @@ export class TimerModule extends Module {
     this.limitTime = new Date(Date.parse(new Date()) + `${this.hourTime}` * 60 * 60 * 1000 + `${this.minuteTime}` * 60 * 1000 + `${this.secondTime}` * 1000);
     console.log(this.limitTime);
     
-    initialClock('timerr', this.limitTime);
+    initialClock('timerClick', this.limitTime);
 
     
   }

@@ -10,7 +10,6 @@ export class ClicksModule extends Module {
 
   countClicks() {
       this.count += 1;
-      console.log(this.count);
   }
 
   reset () {
@@ -37,7 +36,6 @@ export class ClicksModule extends Module {
         this.reset();
         return clearInterval(timeForClicks);
       } 
-      console.log(this.time);
     }, 1000)
     
   }
