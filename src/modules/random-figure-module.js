@@ -45,7 +45,7 @@ export class RandomFigureModule extends Module {
         context.fill();
     }
 
-    document.body.append(canvas);
+    document.body.prepend(canvas);
     setTimeout(() => {
       canvas.remove();
     }, 3000);
