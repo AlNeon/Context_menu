@@ -5,5 +5,3 @@ export const BACKGROUND_COLORS = [
   "linear-gradient(45deg, #FA8BFF 0%, #2BD2FF 52%, #2BFF88 90%)",
   "linear-gradient(90deg, #FEE140 0%, #FA709A 100%)",
 ];
-
-export const FIGURE = ["triangle", "circle", "square"];

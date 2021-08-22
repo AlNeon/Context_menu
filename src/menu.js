@@ -44,14 +44,14 @@ export class ContextMenu extends Menu {
     this.el.insertAdjacentHTML("beforeend", timerModule.toHTML());
     const timerTrigger = document.querySelector("[data-type='timer']");
     timerTrigger.addEventListener("click", () => {
-      timerModule.trigger();
       this.close();
+      timerModule.trigger();
     });
 
     const randomFigureModule = new RandomFigureModule("figure", "Случайная фигура");
     this.el.insertAdjacentHTML("beforeend", randomFigureModule.toHTML());
     const figureTrigger = document.querySelector("[data-type='figure']");
-    timerTrigger.addEventListener("click", () => {
+    figureTrigger.addEventListener("click", () => {
       randomFigureModule.trigger();
       this.close();
     });
