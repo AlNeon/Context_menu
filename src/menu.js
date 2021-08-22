@@ -5,7 +5,7 @@ import { TimerModule } from './modules/timer.module'
 import { RandomFigureModule } from './modules/random-figure-module'
 import { ClicksModule } from './modules/clicks.module'
 import { RandomMessage } from './modules/random-message'
-import { ChoicePickerModule } from './modules/choicePicker.module'
+import { ChoicePickerModule } from './modules/choice-picker.module'
 import { BluryLoading } from './modules/blury-loading.module'
 export class ContextMenu extends Menu {
   constructor(selector) {
