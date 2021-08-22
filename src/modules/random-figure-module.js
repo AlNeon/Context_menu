@@ -13,16 +13,16 @@ export class RandomFigureModule extends Module {
   }
   trigger() {
     const { height, width } = window.screen;
-    const canvas = makeCanvas(width, height / 2);
+    const canvas = makeCanvas(width, height * 0.8);
     const figure = this.arrayOfFigure[random(0, this.arrayOfFigure.length - 1)];
 
     const context = canvas.getContext("2d");
     context.fillStyle = randomColorRGB();
 
     const a = random(0, width);
-    const b = random(0, height);
-    const c = random(0, width - a);
-    const d = random(0, height - b);
+    const b = random(0, height * 0.8);
+    const c = random(10, width - a);
+    const d = random(10, height * 0.8 - b);
 
     switch (figure) {
       case "rectangle":

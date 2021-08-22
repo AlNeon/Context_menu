@@ -1,4 +1,4 @@
-@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@100;400&display=swap");
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@100;400&display=swap');
 
 * {
   margin: 0;
@@ -8,17 +8,13 @@
 
 body {
   font-size: 14px;
-  font-family: "Roboto", sans-serif;
+  font-family: 'Roboto', sans-serif;
   height: 100vh;
   width: 100%;
   /* padding: 2rem; */
   background-color: #ff3cac;
-  background-image: linear-gradient(
-    225deg,
-    #ff3cac 0%,
-    #784ba0 50%,
-    #2b86c5 100%
-  );
+  background-image: linear-gradient(225deg, #ff3cac 0%, #784ba0 50%, #2b86c5 100%);
+  overflow: hidden;
 }
 
 .menu {
@@ -85,6 +81,69 @@ body {
   font-size: 16px;
 }
 
+#choice-picker-container {
+  width: 500px;
+  margin: 2rem auto;
+  overflow: hidden;
+}
+
+.picker-condition {
+  color: #fff;
+  margin: 10px 0 20px;
+  text-align: center;
+}
+
+textarea {
+  border: none;
+  display: block;
+  width: 100%;
+  height: 100px;
+  font-family: inherit;
+  padding: 10px;
+  margin: 0 0 20px;
+  font-size: 16px;
+}
+
+.tag {
+  background-color: #f0932b;
+  color: #fff;
+  border-radius: 50px;
+  padding: 10px 20px;
+  margin: 0 5px 10px 0;
+  font-size: 14px;
+  display: inline-block;
+}
+
+.tag.highlight {
+  background-color: #273c75;
+}
 .canvas {
   position: absolute;
+}
+
+.box {
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  width: 30%;
+  height: auto;
+  margin: 15px;
+}
+
+.block {
+  text-align: center;
+  margin: 15px;
+  padding: 5px;
+  border: 1px solid #fff;
+  border-radius: 10px;
+}
+
+.block_img {
+  width: 100px;
+  height: auto;
+  border-radius: 50%;
+}
+
+.block_title {
+  margin: 5px 0;
 }
