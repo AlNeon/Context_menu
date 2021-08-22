@@ -3,6 +3,7 @@ import { BackgroundModule } from "./modules/background.module";
 import { SoundModule } from "./modules/sound.module";
 import { TimerModule } from "./modules/timer.module";
 import { RandomFigureModule } from "./modules/random-figure-module";
+import { RandomMessage } from "./modules/random-message";
 
 export class ContextMenu extends Menu {
   constructor(selector) {
@@ -53,6 +54,14 @@ export class ContextMenu extends Menu {
     const figureTrigger = document.querySelector("[data-type='figure']");
     figureTrigger.addEventListener("click", () => {
       randomFigureModule.trigger();
+      this.close();
+    });
+
+    const randomMessage = new RandomMessage("quote", "Случайная цитата");
+    this.el.insertAdjacentHTML("beforeend", randomMessage.toHTML());
+    const messageTrigger = document.querySelector("[data-type='quote']");
+    messageTrigger.addEventListener("click", () => {
+      randomMessage.trigger();
       this.close();
     });
   }
