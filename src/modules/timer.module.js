@@ -80,6 +80,6 @@ export class TimerModule extends Module {
         `${this.secondTime}` * 1000
     )
 
-    initialClock('timerr', this.limitTime)
+    initialClock('timerClick', this.limitTime)
   }
 }
